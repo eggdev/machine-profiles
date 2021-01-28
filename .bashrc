@@ -33,12 +33,20 @@ alias ghard='git reset --hard $1'
 alias gcb='git checkout -b $1'
 alias gdel='git branch -d $1'
 
+function gump {
+    branch_name=$(git symbolic-ref -q HEAD)
+    branch_name=${branch_name##refs/heads/}
+    branch_name=${branch_name:-HEAD}
+    git push --set-upstream origin ${branch_name}
+}
+
 # Bash Updates
 alias src='source ~/.zshrc'
 alias zprof='code ~/.zshrc'
 alias hprof='code ~/.hyper.js'
 alias prof_rc='code ~/.bash_profile'
-alias prof='code ~/.bashrc'
+alias prof='code ~/dev/machine-profiles/.bashrc'
+alias pi='ssh pi@raspberrypi.local'
 
 # randoms
 alias newnote='touch ~/dev/notes $1'
