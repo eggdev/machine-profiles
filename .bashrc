@@ -16,7 +16,7 @@ alias ...='cd ../../'                       # Go back 2 directory levels
 alias ....='cd ../../../'                   # Go back 3 directory levels
 alias .....='cd ../../../../'               # Go back 4 directory levels
 alias dev='cd ~/dev/'
-alias mksp='cd ~/dev/makespace'
+alias slate='cd ~/dev/os'
 
 # Git Alias
 alias gs='git status -s -b'
@@ -49,13 +49,6 @@ alias prof='code ~/dev/machine-profiles/.bashrc'
 alias pi='ssh pi@raspberrypi.local'
 
 # randoms
-alias newnote='touch ~/dev/notes $1'
-alias notes='code ~/dev/notes'
-alias oneone='code ~/dev/notes/one_on_one.md'
+alias python=python3.6
 
-# alias dockspace=`defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock`
-
-alias usemksp='npm config set registry https://npm-proxy.fury.io/makespace/'
-alias usenpm='npm config set registry https://registry.npmjs.org'
-
-alias sphell='source .venv/bin/activate'
+# alias dockspace=`defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock`'
