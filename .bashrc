@@ -25,6 +25,7 @@ alias gcm='git commit -m'
 alias gp="git push"
 alias gpt='yarn test:CI && git push'
 alias gpf='git push -f'
+alias gpr='git push eggdev'
 alias gamend='git commit --amend'
 alias gk='gitk --all'
 alias gf='git fetch'
@@ -45,7 +46,7 @@ alias src='source ~/.zshrc'
 alias zprof='code ~/.zshrc'
 alias hprof='code ~/.hyper.js'
 alias prof_rc='code ~/.bash_profile'
-alias prof='code ~/dev/machine-profiles/.bashrc'
+alias prof='code ~/dev/personal/machine-profiles/.bashrc'
 alias pi='ssh pi@raspberrypi.local'
 
 # randoms
