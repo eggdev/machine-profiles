@@ -20,12 +20,12 @@ alias slate='cd ~/dev/os'
 
 # Git Alias
 alias gs='git status -s -b'
-alias ga='git add .'
-alias gcm='git commit -m'
+alias ga='git add --patch'
+alias gcm='git commit -v'
 alias gp="git push"
 alias gpt='yarn test:CI && git push'
 alias gpf='git push -f'
-alias gpr='git push eggdev'
+alias gpe='git push eggdev'
 alias gamend='git commit --amend'
 alias gk='gitk --all'
 alias gf='git fetch'
