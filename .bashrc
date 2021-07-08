@@ -50,6 +50,6 @@ alias prof='code ~/dev/personal/machine-profiles/.bashrc'
 alias pi='ssh pi@raspberrypi.local'
 
 # randoms
-alias python=python3.6
+alias python=python3
 
 # alias dockspace=`defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock`'
