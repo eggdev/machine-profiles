@@ -47,6 +47,8 @@ alias zprof='code ~/.zshrc'
 alias hprof='code ~/.hyper.js'
 alias prof_rc='code ~/.bash_profile'
 alias prof='code ~/dev/personal/machine-profiles/.bashrc'
+alias espn='ssh pi@espn.local'
+alias pace='ssh pi@paceclock.local'
 alias pi='ssh pi@raspberrypi.local'
 
 # randoms
