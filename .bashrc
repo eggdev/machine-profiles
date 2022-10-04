@@ -33,6 +33,7 @@ alias gch='git checkout'
 alias ghard='git reset --hard $1'
 alias gcb='git checkout -b $1'
 alias gdel='git branch -d $1'
+alias gho='git reset --hard origin/"$(git symbolic-ref --short -q HEAD)"'
 
 function gump {
     branch_name=$(git symbolic-ref -q HEAD)
@@ -53,5 +54,17 @@ alias pi='ssh pi@raspberrypi.local'
 
 # randoms
 alias python=python3
+alias groc='ngrok http --region=us --hostname=1e21-96-250-168-54.ngrok.io'
+
+
+function today {
+    team=("Anton" "Boz" "Ivo" "Don" "Emmanuel" "Marina" "Matt" "Tom")
+    team=($(shuf -e "${team[@]}"))
+    team=("Ivan" "Brendan" "Liron" "${team[@]}")
+    for str in ${team[@]}; do
+        echo $str
+    done
+}
+
 
 # alias dockspace=`defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock`'
