@@ -33,14 +33,37 @@ alias gcb='git checkout -b $1'
 alias gdel='git branch -d $1'
 alias gdelr='git push origin --delete "$(git symbolic-ref --short -q HEAD)"'
 alias gho='git reset --hard origin/"$(git symbolic-ref --short -q HEAD)"'
+alias gundo='git reset HEAD~1'
+alias ghide='git update-index --assume-unchanged $1'
+alias gunhide='git update-index --no-assume-unchanged $1'
+alias glog='git log --oneline --graph --decorate --all'
+alias gloga='git log --oneline --graph --decorate --all --author=$1'
+
+alias d='docker'
+alias dc='docker-compose'
+alias dbash='docker exec -it $1 bash'
+alias dlogs='docker logs $1'
+alias dstop='docker stop $1'
+alias dstart='docker start $1'
+alias drm='docker rm $1'
+alias drmi='docker rmi $1'
+alias dps='docker ps -a'
+alias dpdangle='docker rm $(docker ps -aq)'
+alias dangle='docker rmi $(docker images -f "dangling=true" -q)'
+
 
 
 # Runs git push set upstream with the current branch name
 function gump () {
-    branch_name=$(git symbolic-ref -q HEAD)
-    branch_name=${branch_name##refs/heads/}
-    branch_name=${branch_name:-HEAD}
+  branch_name=$(git symbolic-ref -q HEAD)
+  branch_name=${branch_name##refs/heads/}
+  branch_name=${branch_name:-HEAD}
+  
+  if [ -z "$1" ]; then
     git push --set-upstream origin ${branch_name}
+  else
+   git push --set-upstream origin ${branch_name} $1
+  fi
 }
 
 
@@ -74,8 +97,6 @@ nba() {
     fi
 }
 
-JIRA_API_TOKEN="ATATT3xFfGF08mdyO4f-v1la7wAslKgCv6-rg1Az2UQ--I5shlxgzv0UQtWxblIsI1_LMqr0GfXlI1a-mBEn8LLXUfN_5OSkaCMIz3DPL0_v52EbrmmEMyfDfs6NVvc6C7RlhheM1nSMvy-uHirH9bxo2Bfd1cNMs2nA3Z_Fw4bPNqn4Jmvmcr8=FE7437F3"
-
 alias firefox="open /Applications/Firefox.app"
 
 mpgif() {
@@ -92,3 +113,5 @@ mpgif() {
 kp() {
   exec npx kill-port $1
 }
+
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
